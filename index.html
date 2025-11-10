@@ -1,48 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Propósito Com Deus</title>
   <style>
-    body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
-    header { background: #4a90e2; color: white; padding: 20px; text-align: center; }
-    main { padding: 20px; }
-    .versiculo { background: white; padding: 15px; margin-bottom: 10px; border-left: 5px solid #4a90e2; }
-    footer { background: #eee; text-align: center; padding: 10px; }
-    .btn-whatsapp { display: block; margin: 20px auto; padding: 10px 20px; background: #25D366; color: white; text-align: center; text-decoration: none; border-radius: 5px; width: fit-content; }
+    :root {
+      --azul: #4a90e2;
+      --verde: #25d366;
+      --cinza: #f4f4f4;
+      --branco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--cinza);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--azul);
+      color: var(--branco);
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .versiculo {
+      background-color: var(--branco);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--azul);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .versiculo h3 {
+      margin-bottom: 10px;
+      color: var(--azul);
+    }
+
+    .versiculo p {
+      margin-bottom: 10px;
+    }
+
+    .btn-whatsapp {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: var(--verde);
+      color: var(--branco);
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebc5c;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      .versiculo {
+        padding: 15px;
+      }
+
+      .btn-whatsapp {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Bate Papo - Propósito Com Deus</h1>
-    <p>Versículos inspiradores todos os dias</p>
+    <p>Versículos e reflexões diárias para sua caminhada espiritual</p>
   </header>
 
   <main id="versiculos">
-    <!-- Versículos serão carregados aqui -->
+    <!-- Versículos serão inseridos aqui -->
   </main>
 
   <a class="btn-whatsapp" href="https://whatsapp.com/channel/0029VbBT5Gx7z4kbBiFxHi3E" target="_blank">
-    Seguir no WhatsApp
+    Seguir Canal no WhatsApp
   </a>
 
   <footer>
-    &copy; 2025 Propósito Com Deus
+    &copy; 2025 Propósito Com Deus. Todos os direitos reservados.
   </footer>
 
   <script>
-    // Exemplo de versículos estáticos (substituir por dados reais do canal)
+    // Exemplo de versículos com explicações (substitua por dados reais)
     const versiculos = [
-      { texto: "Porque Deus amou o mundo de tal maneira...", referencia: "João 3:16" },
-      { texto: "O Senhor é o meu pastor, nada me faltará.", referencia: "Salmos 23:1" }
+      {
+        referencia: "Salmos 23:1",
+        texto: "O Senhor é o meu pastor, nada me faltará.",
+        explicacao: "Esse versículo nos lembra que Deus cuida de nós em todas as circunstâncias."
+      },
+      {
+        referencia: "Filipenses 4:13",
+        texto: "Posso todas as coisas naquele que me fortalece.",
+        explicacao: "Com Deus, somos capazes de superar qualquer desafio com fé e coragem."
+      }
     ];
 
     const container = document.getElementById('versiculos');
     versiculos.forEach(v => {
       const div = document.createElement('div');
       div.className = 'versiculo';
-      div.innerHTML = `<strong>${v.referencia}</strong><p>${v.texto}</p>`;
+      div.innerHTML = `
+        <h3>📖 ${v.referencia}</h3>
+        <p><strong>Versículo:</strong> ${v.texto}</p>
+        <p><strong>Reflexão:</strong> ${v.explicacao}</p>
+      `;
       container.appendChild(div);
     });
   </script>
