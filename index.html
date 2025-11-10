@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Propósito Com Deus</title>
+  <style>
+    body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    header { background: #4a90e2; color: white; padding: 20px; text-align: center; }
+    main { padding: 20px; }
+    .versiculo { background: white; padding: 15px; margin-bottom: 10px; border-left: 5px solid #4a90e2; }
+    footer { background: #eee; text-align: center; padding: 10px; }
+    .btn-whatsapp { display: block; margin: 20px auto; padding: 10px 20px; background: #25D366; color: white; text-align: center; text-decoration: none; border-radius: 5px; width: fit-content; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bate Papo - Propósito Com Deus</h1>
+    <p>Versículos inspiradores todos os dias</p>
+  </header>
+
+  <main id="versiculos">
+    <!-- Versículos serão carregados aqui -->
+  </main>
+
+  <a class="btn-whatsapp" href="https://whatsapp.com/channel/0029VbBT5Gx7z4kbBiFxHi3E" target="_blank">
+    Seguir no WhatsApp
+  </a>
+
+  <footer>
+    &copy; 2025 Propósito Com Deus
+  </footer>
+
+  <script>
+    // Exemplo de versículos estáticos (substituir por dados reais do canal)
+    const versiculos = [
+      { texto: "Porque Deus amou o mundo de tal maneira...", referencia: "João 3:16" },
+      { texto: "O Senhor é o meu pastor, nada me faltará.", referencia: "Salmos 23:1" }
+    ];
+
+    const container = document.getElementById('versiculos');
+    versiculos.forEach(v => {
+      const div = document.createElement('div');
+      div.className = 'versiculo';
+      div.innerHTML = `<strong>${v.referencia}</strong><p>${v.texto}</p>`;
+      container.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>
